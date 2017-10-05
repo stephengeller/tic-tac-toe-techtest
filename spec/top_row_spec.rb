@@ -27,6 +27,4 @@ describe TopRow do
     end
   end
 
-
-
 end

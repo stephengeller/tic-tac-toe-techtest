@@ -16,5 +16,4 @@ class BottomRow
     @row[space] = symbol
   end
 
-
 end

@@ -1,11 +1,10 @@
 require 'board'
 
 describe Board do
-  let(:top_row) { double :top_row}
-  let(:middle_row) { double :middle_row}
-  let(:bottom_row) { double :bottom_row}
+  let(:top_row) { double :top_row }
+  let(:middle_row) { double :middle_row }
+  let(:bottom_row) { double :bottom_row }
   subject { Board.new(top_row, middle_row, bottom_row) }
-
 
   it 'works' do
     expect(described_class).to be
@@ -27,7 +26,6 @@ describe Board do
       " 7 | 8 | 9 "
       )
     end
-
 
   end
 end

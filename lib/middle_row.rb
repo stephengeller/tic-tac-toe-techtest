@@ -16,5 +16,4 @@ class MiddleRow
     @row[space] = symbol
   end
 
-
 end

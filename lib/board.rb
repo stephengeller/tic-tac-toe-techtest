@@ -10,5 +10,4 @@ class Board
     str = "#{@top_row}\n#{@middle_row}\n#{@bottom_row}"
   end
 
-
 end

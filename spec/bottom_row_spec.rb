@@ -27,6 +27,4 @@ describe BottomRow do
     end
   end
 
-
-
 end

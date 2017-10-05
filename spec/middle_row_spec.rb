@@ -27,6 +27,4 @@ describe MiddleRow do
     end
   end
 
-
-
 end
