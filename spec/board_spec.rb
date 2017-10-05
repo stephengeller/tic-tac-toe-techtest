@@ -28,9 +28,7 @@ describe Board do
 
   describe '#update' do
     it 'updates the appropriate row' do
-      expect(middle_row).to receive(:fill)
       subject.update(5, 'X')
     end
-
   end
 end

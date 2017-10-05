@@ -7,27 +7,28 @@ class Board
 
   attr_reader :top_row, :middle_row, :bottom_row
 
-  def initialize(top_row = TopRow.new, middle_row = MiddleRow.new, bottom_row = BottomRow.new)
-    @top_row = top_row
-    @middle_row = middle_row
-    @bottom_row = bottom_row
+  def initialize(row_formatter = RowFormatter.new)
+    @row_formatter = row_formatter
+    @cells = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ]
   end
 
-  def render_rows(rows)
-    str = "#{@top_row.render_row}\n" +
-    "#{@middle_row.render_row}\n" +
-    "#{@bottom_row.render_row}"
+  def render_board(rows)
+    str = "#{render_row(@cells[0])}\n" +
+    "#{render_row(@cells[1])}\n" +
+    "#{render_row(@cells[2])}"
     str
   end
 
+  def render_row
+    @row_formatter.format_cell(@cells[0])
+  end
+
   def update(number, symbol)
-    if [1,2,3].include? number
-      @top_row.fill(number, symbol)
-    elsif [4,5,6].include? number
-      @middle_row.fill(number, symbol)
-    elsif [7,8,9].include? number
-      @bottom_row.fill(number, symbol)
-    end
+
   end
 
 end
