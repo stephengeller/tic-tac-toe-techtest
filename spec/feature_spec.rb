@@ -5,7 +5,7 @@ describe 'feature' do
 
   tom = Player.new('Tom', 'T')
   jerry = Player.new('Jerry', 'J')
-  game = Game.new
+  game = Game.new(tom, jerry)
 
   # 1 | 2 | 3
   #----------
