@@ -14,10 +14,6 @@ class WinnerChecker
 
   private
 
-  def return_winner
-    return "Winner winner chicken dinner!"
-  end
-
   def check_rows(board)
     board.each do |rows|
       return true if rows.same_values?
@@ -27,18 +23,12 @@ class WinnerChecker
 
   def check_columns(board)
     board = @column_formatter.format_array(board)
-    board.each do |rows|
-      return true if rows.same_values?
-    end
-    false
+    check_rows(board)
   end
 
   def check_diagonals(board)
     board = @diagonal_formatter.format_array(board)
-    board.each do |rows|
-      return true if rows.same_values?
-    end
-    false
+    check_rows(board)
   end
 end
 

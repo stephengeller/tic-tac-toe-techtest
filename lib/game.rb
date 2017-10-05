@@ -4,7 +4,9 @@ require_relative './winner_checker'
 
 class Game
 
-  def initialize(player1, player2, board = Board.new, turn_counter = TurnCounter, winner_checker = WinnerChecker.new)
+  def initialize(player1, player2, board = Board.new,
+                  turn_counter = TurnCounter,
+                  winner_checker = WinnerChecker.new)
     @board = board
     @turn_counter = turn_counter.new(player1, player2)
     @winner_checker = winner_checker
