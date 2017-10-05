@@ -26,8 +26,8 @@ class Board
     @row_formatter.format_row(row)
   end
 
-  def update(number, symbol)
-    @cells = @row_updater.update(@cells, number, symbol)
+  def update(number, current_turn)
+    @cells = @row_updater.update(@cells, number, current_turn.symbol)
   end
 
 end

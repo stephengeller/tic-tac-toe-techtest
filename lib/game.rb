@@ -10,10 +10,19 @@ class Game
   end
 
   def play(number)
-    current_turn = @turn_counter.current_turn
-    @board.update(number, current_turn.symbol)
+    update_board_and_print(number)
+    next_turn
+  end
+
+  private
+
+  def next_turn
     @turn_counter.next
-    @board.render_board
+  end
+
+  def update_board_and_print(number)
+    @board.update(number, @turn_counter.current_turn)
+    puts @board.render_board
   end
 
 end

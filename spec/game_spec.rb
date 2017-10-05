@@ -8,6 +8,7 @@ describe Game do
   before do
     allow(board).to receive(:new).and_return(board)
     allow(turn_counter).to receive(:new).and_return(turn_counter)
+    allow(board).to receive(:update)
   end
 
   it 'works' do
@@ -21,7 +22,7 @@ describe Game do
     end
 
     it 'updates the appropriate row' do
-      expect(board).to receive(:update).with(5, 'X')
+      expect(board).to receive(:update).with(5, turn_counter.current_turn)
       allow(turn_counter).to receive(:next)
       allow(board).to receive(:render_board)
       subject.play(5)

@@ -3,6 +3,8 @@ require 'board'
 describe Board do
   let(:row_formatter) { double :row_foramtter}
   let(:row_updater) { double :row_updater}
+  let(:current_turn) { double :current_turn}
+
 
   subject { Board.new(row_formatter, row_updater) }
 
@@ -26,8 +28,9 @@ describe Board do
 
   describe '#update' do
     it 'updates the appropriate row' do
+      allow(current_turn).to receive(:symbol)
       expect(row_updater).to receive(:update)
-      subject.update(5, 'X')
+      subject.update(5, current_turn)
     end
   end
 end
