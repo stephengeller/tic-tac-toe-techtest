@@ -15,7 +15,11 @@ describe 'feature' do
 
   # Tom's turn!
 
+  game.play(4)
+  game.play(1)
   game.play(5)
+  game.play(2)
+  game.play(6)
 
   # 1 | 2 | 3
   #----------
@@ -24,8 +28,6 @@ describe 'feature' do
   # 7 | 8 | 9
 
   # Jerry's turn!
-
-  game.play(3)
 
   # 1 | 2 | J
   #----------

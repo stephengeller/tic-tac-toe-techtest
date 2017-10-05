@@ -3,7 +3,9 @@ require 'game'
 describe Game do
   let(:board) { double :board }
   let(:turn_counter) { double :turn_counter }
-  subject { Game.new('player 1', 'player 2', board, turn_counter) }
+  let(:winner_checker) { double :winner_checker }
+
+  subject { Game.new('player 1', 'player 2', board, turn_counter, winner_checker) }
 
   before do
     allow(board).to receive(:new).and_return(board)
@@ -19,6 +21,8 @@ describe Game do
 
     before do
       allow(turn_counter).to receive_message_chain(:current_turn, :symbol).and_return('X')
+      allow(board).to receive(:cells)
+      allow(winner_checker).to receive(:check_winner)
     end
 
     it 'updates the appropriate row' do

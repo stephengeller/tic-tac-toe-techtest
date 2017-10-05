@@ -1,9 +1,15 @@
+require_relative 'diagonal_formatter'
+require_relative 'column_formatter'
+
 class WinnerChecker
 
+  def initialize(column_formatter = ColumnFormatter.new, diagonal_formatter = DiagonalFormatter.new)
+    @column_formatter = column_formatter
+    @diagonal_formatter = diagonal_formatter
+  end
+
   def check_winner(board)
-    return_winner if (check_rows(board) ||
-                      check_columns(board) ||
-                      check_diagonals(board))
+    (check_rows(board) || check_columns(board) || check_diagonals(board))
   end
 
   private
@@ -20,16 +26,18 @@ class WinnerChecker
   end
 
   def check_columns(board)
-    i = 0
-    while i < 3
-      return true if [board[0][i], board[1][i], board[2][i]].same_values?
-      i += 1
+    board = @column_formatter.format_array(board)
+    board.each do |rows|
+      return true if rows.same_values?
     end
     false
   end
 
   def check_diagonals(board)
-    return true if [board[0][0], board[1][1], board[2][2]].same_values?
+    board = @diagonal_formatter.format_array(board)
+    board.each do |rows|
+      return true if rows.same_values?
+    end
     false
   end
 end

@@ -3,6 +3,8 @@ require_relative './row_updater'
 
 class Board
 
+  attr_reader :cells
+
   def initialize(row_formatter = RowFormatter.new, row_updater = RowUpdater.new)
     @row_formatter = row_formatter
     @row_updater = row_updater
@@ -14,15 +16,11 @@ class Board
   end
 
   def render_board
-    str = ""
-    @cells.each do |row|
-      str += "#{render_row(row)}\n"
-    end
-    str
+    render_rows(@cells) + "\n"
   end
 
-  def render_row(row)
-    @row_formatter.format_row(row)
+  def render_rows(board)
+    @row_formatter.format_rows(board)
   end
 
   def update(number, current_turn)

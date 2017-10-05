@@ -16,12 +16,8 @@ describe Board do
 
   describe '#render_rows' do
     it 'displays all three rows' do
-      allow(row_formatter).to receive(:format_row).and_return(' line')
-      expect(subject.render_board).to eq(
-      " line\n" +
-      " line\n" +
-      " line\n"
-      )
+      allow(row_formatter).to receive(:format_rows).and_return(' line')
+      expect(subject.render_board).to eq " line\n"
     end
   end
 

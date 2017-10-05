@@ -26,13 +26,13 @@ describe WinnerChecker do
 
   describe '#check_winner' do
     it 'returns a message if winning row' do
-      expect(subject.check_winner(winning_row)).to eq 'Winner winner chicken dinner!'
+      expect(subject.check_winner(winning_row)).to eq true
     end
     it 'returns a message if winning column' do
-      expect(subject.check_winner(winning_column)).to eq 'Winner winner chicken dinner!'
+      expect(subject.check_winner(winning_column)).to eq true
     end
     it 'returns a message if winning diagonal' do
-      expect(subject.check_winner(winning_diagonal)).to eq 'Winner winner chicken dinner!'
+      expect(subject.check_winner(winning_diagonal)).to eq true
     end
   end
 
