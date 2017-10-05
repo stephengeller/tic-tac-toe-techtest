@@ -10,6 +10,7 @@ class TurnCounter
   def next
     @current_turn = @players.last
     @players.reverse!
+    @current_turn
   end
 
 end

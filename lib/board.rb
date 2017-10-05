@@ -1,14 +1,14 @@
-require_relative './top_row'
-require_relative './middle_row'
-require_relative './bottom_row'
+require_relative './row_formatter'
+require_relative './row_updater'
 
 
 class Board
 
   attr_reader :top_row, :middle_row, :bottom_row
 
-  def initialize(row_formatter = RowFormatter.new)
+  def initialize(row_formatter = RowFormatter.new, row_updater = RowUpdater.new)
     @row_formatter = row_formatter
+    @row_updater = row_updater
     @cells = [
       [1, 2, 3],
       [4, 5, 6],
@@ -16,19 +16,21 @@ class Board
     ]
   end
 
-  def render_board(rows)
-    str = "#{render_row(@cells[0])}\n" +
-    "#{render_row(@cells[1])}\n" +
-    "#{render_row(@cells[2])}"
+  def render_board
+    str = ""
+    @cells.each do |row|
+      str += "#{render_row(row)}\n"
+    end
     str
   end
 
-  def render_row
-    @row_formatter.format_cell(@cells[0])
+  def render_row(row)
+    @row_formatter.format_row(row)
   end
 
   def update(number, symbol)
-
+    @cells = @row_updater.update(@cells, number, symbol)
+    p @cells
   end
 
 end

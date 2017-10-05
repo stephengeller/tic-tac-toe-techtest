@@ -15,6 +15,7 @@ class Game
     current_turn = @turn_counter.current_turn
     @board.update(number, current_turn.symbol)
     @turn_counter.next
+    @board.render_board
   end
 
 end
