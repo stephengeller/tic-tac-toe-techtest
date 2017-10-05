@@ -6,8 +6,6 @@ class Game
 
   def initialize(player1, player2, board = Board, turn_counter = TurnCounter)
     @board = board.new
-    @player1 = player1
-    @player2 = player2
     @turn_counter = turn_counter.new(player1, player2)
   end
 

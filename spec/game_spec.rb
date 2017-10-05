@@ -23,12 +23,21 @@ describe Game do
     it 'updates the appropriate row' do
       expect(board).to receive(:update).with(5, 'X')
       allow(turn_counter).to receive(:next)
+      allow(board).to receive(:render_board)
       subject.play(5)
     end
 
     it 'goes to next turn' do
       allow(board).to receive(:update).with(5, 'X')
+      allow(board).to receive(:render_board)
       expect(turn_counter).to receive(:next)
+      subject.play(5)
+    end
+
+    it 'renders the board' do
+      allow(board).to receive(:update).with(5, 'X')
+      allow(turn_counter).to receive(:next)
+      expect(board).to receive(:render_board)
       subject.play(5)
     end
   end

@@ -4,8 +4,6 @@ require_relative './row_updater'
 
 class Board
 
-  attr_reader :top_row, :middle_row, :bottom_row
-
   def initialize(row_formatter = RowFormatter.new, row_updater = RowUpdater.new)
     @row_formatter = row_formatter
     @row_updater = row_updater
@@ -30,7 +28,6 @@ class Board
 
   def update(number, symbol)
     @cells = @row_updater.update(@cells, number, symbol)
-    p @cells
   end
 
 end

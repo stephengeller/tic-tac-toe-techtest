@@ -8,6 +8,8 @@ class RowUpdater
     end
   end
 
+  private
+
   def swap_cells(x, number, symbol)
     if x == number
       symbol
