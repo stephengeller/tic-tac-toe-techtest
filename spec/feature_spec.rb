@@ -27,7 +27,6 @@ describe 'feature' do
 
   game.play(3)
 
-
   # 1 | 2 | J
   #----------
   # 4 | T | 6
@@ -35,6 +34,5 @@ describe 'feature' do
   # 7 | 8 | 9
 
   # ...
-
 
 end

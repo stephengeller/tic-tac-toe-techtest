@@ -2,7 +2,7 @@ require 'turn_counter'
 
 describe TurnCounter do
 
-  subject { TurnCounter.new('player 1', 'player 2')}
+  subject { TurnCounter.new('player 1', 'player 2') }
 
   it 'works' do
     expect(described_class).to be
@@ -15,7 +15,7 @@ describe TurnCounter do
   end
 
   describe '#next' do
-    it 'adds a turn' do
+    it 'alternates between players' do
       subject.next
       expect(subject.current_turn).to eq 'player 2'
       subject.next
@@ -27,7 +27,5 @@ describe TurnCounter do
     it 'resets turns to 0' do
     end
   end
-
-
 
 end
