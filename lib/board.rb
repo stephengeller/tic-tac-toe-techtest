@@ -1,7 +1,6 @@
 require_relative './row_formatter'
 require_relative './row_updater'
 
-
 class Board
 
   def initialize(row_formatter = RowFormatter.new, row_updater = RowUpdater.new)

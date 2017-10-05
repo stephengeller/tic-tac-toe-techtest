@@ -1,10 +1,9 @@
 require 'board'
 
 describe Board do
-  let(:row_formatter) { double :row_foramtter}
-  let(:row_updater) { double :row_updater}
-  let(:current_turn) { double :current_turn}
-
+  let(:row_formatter) { double :row_foramtter }
+  let(:row_updater) { double :row_updater }
+  let(:current_turn) { double :current_turn }
 
   subject { Board.new(row_formatter, row_updater) }
 

@@ -1,7 +1,6 @@
 require_relative './board'
 require_relative './turn_counter'
 
-
 class Game
 
   def initialize(player1, player2, board = Board, turn_counter = TurnCounter)
