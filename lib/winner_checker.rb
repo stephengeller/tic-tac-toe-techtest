@@ -3,7 +3,8 @@ require_relative 'column_formatter'
 
 class WinnerChecker
 
-  def initialize(column_formatter = ColumnFormatter.new, diagonal_formatter = DiagonalFormatter.new)
+  def initialize(column_formatter = ColumnFormatter.new,
+                 diagonal_formatter = DiagonalFormatter.new)
     @column_formatter = column_formatter
     @diagonal_formatter = diagonal_formatter
   end
